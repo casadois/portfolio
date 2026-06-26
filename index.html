@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+    ╔═══════════════════════════════════════════════════════════╗
+    ║          CASA DOIS ARQUITETOS — PORTFÓLIO DIGITAL         ║
+    ╚═══════════════════════════════════════════════════════════╝
+
+    ESTRUTURA DE PASTAS:
+    ─────────────────────────────────────────────────────────────
+    casadois-portfolio/
+    │
+    ├── index.html                 ← você está aqui
+    │
+    ├── css/
+    │   └── estilo.css             ← cores, fontes, layout
+    │
+    ├── js/
+    │   └── main.js                ← animações de scroll
+    │
+    └── assets/
+        ├── logos/
+        │   ├── logo-nav.png           (cabeçalho fixo)
+        │   ├── logo-hero.png          (capa — versão clara) OK
+        │   ├── logo-encerramento.png  (fundo escuro — versão clara)
+        │   └── logo-footer.png        (rodapé — versão clara)
+        │
+        └── imagens/
+            ├── hero-capa.jpg          (foto principal da capa)
+            ├── encerramento.jpg       (melhor foto do portfólio)
+            ├── qrcode.png             (QR Code de contato)
+            │
+            ├── sobre/
+            │   └── socios.jpg         (foto dos sócios)
+            │
+            ├── projetos/
+            │   ├── casa-primavera-destaque.jpg                   (Casa Primavera - Destaque )
+            │   ├── casa-primavera-piscina.jpg     (Casa Primavera - Piscina)
+            │   └── casa-primavera-horta.jpg        (Casa Primavera-Horta  )
+            │
+            └── interiores/
+                ├── sala.jpg           (3:4 vertical)
+                ├── cozinha.jpg        (1:1 quadrado)
+                ├── quarto.jpg         (3:4 vertical)
+                └── social.jpg         (3:2 horizontal — 2 colunas)
+
+    ─────────────────────────────────────────────────────────────
+    COMO TROCAR UMA IMAGEM:
+      Basta substituir o arquivo na pasta correta
+      mantendo o mesmo nome. Ex: apague "hero-capa.jpg"
+      e coloque um novo com o mesmo nome.
+
+    COMO RENOMEAR UMA IMAGEM:
+      Troque o nome no src="" da tag <img> correspondente.
+
+    COMO EDITAR TEXTOS:
+      Edite diretamente o conteúdo entre as tags no HTML.
+      Cada bloco tem comentários explicando o que é.
+    ─────────────────────────────────────────────────────────────
+  -->
+
+  <title>Casa Dois Arquitetos — Portfólio</title>
+
+  <meta name="description" content="Casa Dois Arquitetos — Arquitetura residencial, comercial e projetos de interiores. 
+  Atendimento personalizado em São José do Rio Pardo e região. Projetos que transformam sonhos em lares sofisticados e acolhedores.">
+
+  <meta property="og:title" content="Casa Dois Arquitetos — Arquitetura que acolhe">
+  <meta property="og:description" content="Projetos residenciais, comerciais e de interiores com identidade, sofisticação e acolhimento.">
+  <meta property="og:image" content="assets/imagens/hero-capa.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="assets/logos/favicon.png">
+
+  <!-- Google Fonts: Jost (tipografia oficial da marca) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Estilos do portfólio -->
+  <link rel="stylesheet" href="css/estilo.css">
+
+</head>
+<body>
+
+
+  <!-- =========================================================
+       NAVEGAÇÃO — CABEÇALHO FIXO
+       =========================================================
+
+       Para alterar os itens do menu: edite os <li> abaixo.
+       Para mudar para onde o item leva: edite o href="#..."
+       (deve coincidir com o id="" da seção correspondente)
+       ========================================================= -->
+
+  <nav>
+
+    <!-- LOGO — Navegação
+         Arquivo: assets/logos/logo-nav.png
+         Para alterar a altura da logo: edite "height: 36px" em css/estilo.css → .nav-logo img -->
+    <div class="nav-logo">
+      <a href="#hero">
+        <img src="assets/logos/logo-nav.png" alt="Casa Dois Arquitetos">
+      </a>
+    </div>
+
+    <!-- MENU -->
+    <ul class="nav-menu">
+      <li><a href="#sobre">Escritório</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#processo">Processo</a></li>
+      <li><a href="#depoimentos">Clientes</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+
+    <!-- BOTÃO HAMBÚRGUER (mobile) -->
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+  </nav>
+
+
+  <!-- =========================================================
+       SEÇÃO 1 — HERO (CAPA)
+       ========================================================= -->
+
+  <section id="hero">
+
+    <!-- Coluna esquerda: logo + tagline -->
+    <div class="hero-left">
+
+      <!-- LOGO — Hero/Capa
+           Arquivo: assets/logos/logo-hero.png
+           Use a versão clara (branca ou algodão) da logo
+           Para alterar o tamanho: edite "width: 280px" em css/estilo.css → .hero-logo img -->
+      <div class="hero-logo reveal reveal-delay-1">
+        <img src="assets/logos/logo-hero-algodao.png" alt="Casa Dois Arquitetos">
+      </div>
+
+      <!-- Tagline principal
+           <em> = destaque em branco | texto normal = tom algodão
+           Para alterar: edite o texto abaixo -->
+      <p class="hero-tagline reveal reveal-delay-2">
+        Arquitetura que <em>acolhe.</em><br>
+        Projetos que <em>transformam.</em>
+      </p>
+
+    </div>
+
+    <!-- Coluna direita: foto + estatísticas -->
+    <div class="hero-right">
+
+      <!-- IMAGEM — Foto principal da capa
+           Arquivo: assets/imagens/hero-capa.jpg
+           Proporção ideal: 4:3 (ex: 1400×1050px) -->
+      <img
+        class="hero-foto reveal"
+        src="assets/imagens/hero-capa.jpg"
+        alt="Projeto residencial Casa Dois Arquitetos"
+        fetchpriority="high">
+
+      <!-- Estatísticas
+           Para alterar números ou rótulos: edite os valores abaixo -->
+      <div class="hero-stats">
+
+        <div class="hero-stat reveal reveal-delay-1">
+          <div class="hero-stat-number">+80</div>       <!-- ← número -->
+          <div class="hero-stat-label">Projetos</div>   <!-- ← rótulo -->
+        </div>
+
+        <div class="hero-stat reveal reveal-delay-2">
+          <div class="hero-stat-number">100%</div>
+          <div class="hero-stat-label">Personalizados</div>
+        </div>
+
+        <div class="hero-stat reveal reveal-delay-3">
+          <div class="hero-stat-number">2</div>
+          <div class="hero-stat-label">Arquitetos</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       SEÇÃO 2 — SOBRE O ESCRITÓRIO
+       ========================================================= -->
+
+  <section id="sobre">
+
+    <!-- Coluna esquerda: texto institucional -->
+    <div class="sobre-left">
+
+      <p class="section-label reveal">Sobre o Escritório</p>
+
+      <!-- Título — <strong> = peso 500 -->
+      <h2 class="section-title reveal reveal-delay-1">
+        Transformamos<br>
+        <strong>sonhos em lares.</strong>
+      </h2>
+
+      <!-- Parágrafos institucionais
+           Para adicionar um parágrafo: copie um bloco <p class="section-text"> -->
+      <p class="section-text reveal reveal-delay-2">
+        A Casa Dois nasceu do desejo de criar espaços que vão além da estética: projetos que acolhem, que traduzem a personalidade de quem os habita, e que elevam a qualidade de vida de forma genuína.
+      </p>
+
+      <p class="section-text reveal reveal-delay-3">
+        Com um processo cuidadoso e centrado no cliente, cada detalhe é pensado para que o resultado final seja exatamente o lar com o qual você sempre sonhou — sofisticado, aconchegante e completamente seu.
+      </p>
+
+      <div class="divider reveal reveal-delay-4"></div>
+
+      <p class="section-text reveal reveal-delay-4" style="font-size: 13px; margin-bottom: 0;">
+        Escritório especializado em arquitetura residencial, comercial e projetos de interiores.
+        Atendimento personalizado em São José do Rio Pardo e região.
+      </p>
+
+    </div>
+
+    <!-- Coluna direita: foto dos sócios + card de identificação -->
+    <div class="sobre-right">
+
+      <!-- IMAGEM — Foto dos sócios (fundo)
+           Arquivo: assets/imagens/sobre/socios.jpg
+           Proporção ideal: retrato (ex: 800×1100px) -->
+      <img
+        class="sobre-foto-bg"
+        src="assets/imagens/sobre/socios.jpg"
+        alt="Marcelo Berti e Victória Paula — Arquitetos"
+       loading="lazy">
+
+      <!-- Card com nomes dos sócios (fica sobre a foto) -->
+      <div class="sobre-card reveal">
+
+        <p class="socios-title">Arquitetos</p>
+
+        <!-- Sócio 1
+             Para alterar: edite nome e registro abaixo -->
+        <div class="socios-grid">
+
+          <div class="socio">
+            <p class="socio-name">Victória Paula</p>
+            <p class="socio-role">Arquiteta & Urbanista</p>
+          </div>
+
+           <div class="socio">
+            <p class="socio-name">Marcelo Berti</p>
+            <p class="socio-role">Arquiteto & Urbanista</p>
+        </div>
+
+</div>
+          
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       SEÇÃO 3 — NOSSA ESSÊNCIA
+       ========================================================= -->
+
+  <section id="essencia">
+
+    <div class="essencia-content">
+
+      <!-- Citação principal
+           <em> = destaque em branco | texto normal = algodão
+           Para alterar: edite o texto abaixo -->
+      <blockquote class="essencia-quote reveal">
+        "Nossa essência é criar projetos que materializem o sonho de cada cliente de ter um lar
+        <em>sofisticado e acolhedor</em> — único como a vida que será vivida nele."
+      </blockquote>
+
+      <!-- Valores da marca
+           Para adicionar/remover valores: adicione ou apague um <span class="valor-item"> -->
+      <div class="essencia-valores reveal reveal-delay-1">
+        <span class="valor-item">Honestidade</span>
+        <span class="valor-item">Criatividade</span>
+        <span class="valor-item">Sofisticação</span>
+        <span class="valor-item">Experiência</span>
+        <span class="valor-item">Qualidade</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       SEÇÃO 4 — COMO TRABALHAMOS (PROCESSO)
+       ========================================================= -->
+
+  <section id="processo">
+
+    <!-- Cabeçalho do processo -->
+    <div class="processo-header">
+
+      <div>
+        <p class="section-label reveal">Como trabalhamos</p>
+        <h2 class="section-title reveal reveal-delay-1" style="font-size: 36px;">
+          O processo deve ser tão <strong>agradável</strong> quanto o resultado.
+        </h2>
+      </div>
+
+      <p class="section-text reveal reveal-delay-2">
+        Cada etapa foi pensada para que você se sinta seguro, informado e entusiasmado — do primeiro encontro à entrega final. Trabalhamos com transparência e total dedicação ao seu projeto.
+      </p>
+
+    </div>
+
+    <!-- Etapas do processo
+         Para adicionar uma etapa: copie um bloco <div class="step"> completo
+         Para remover: apague o bloco inteiro -->
+    <div class="processo-steps">
+
+      <div class="step reveal" data-step="1">
+        <p class="step-num">01</p>                        <!-- ← número da etapa -->
+        <p class="step-name">Levantamento</p>             <!-- ← nome da etapa -->
+        <p class="step-desc">
+          Compreendemos profundamente seus desejos, necessidades
+          e o estilo de vida que você imagina para o seu espaço. 
+          Além de fazer o levantamento de todas as medidas dos 
+          espaços para o projeto.
+        </p>
+        <div class="step-bar"></div>
+      </div>
+
+      <div class="step reveal reveal-delay-1" data-step="2">
+        <p class="step-num">02</p>
+        <p class="step-name">Estudo Preliminar</p>
+        <p class="step-desc">
+          Desenvolvemos as primeiras propostas criativas, explorando
+          conceitos e direções de projeto alinhados à sua visão.
+        </p>
+        <div class="step-bar"></div>
+      </div>
+
+      <div class="step reveal reveal-delay-2" data-step="3">
+        <p class="step-num">03</p>
+        <p class="step-name">Anteprojeto</p>
+        <p class="step-desc">
+          Refinamos o projeto com detalhes de layout, materiais,
+          paleta e ambientação — tornando o sonho cada vez mais concreto.
+        </p>
+        <div class="step-bar"></div>
+      </div>
+
+      <div class="step reveal reveal-delay-3" data-step="4">
+        <p class="step-num">04</p>
+        <p class="step-name">Projeto Executivo</p>
+        <p class="step-desc">
+          Entregamos toda a documentação técnica para que a obra seja
+          realizada com precisão, qualidade e fidelidade ao projeto.
+        </p>
+        <div class="step-bar"></div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       SEÇÃO 5 — PROJETOS SELECIONADOS
+       ========================================================= -->
+
+  <section id="projetos">
+
+    <!-- Cabeçalho -->
+    <div class="projetos-header">
+      <div>
+        <p class="section-label reveal">Projetos Selecionados</p>
+        <h2 class="section-title reveal reveal-delay-1" style="font-size: 36px; margin-bottom: 0;">
+          Residencial &amp; Interiores
+        </h2>
+      </div>
+      <p class="section-text reveal reveal-delay-2" style="max-width: 280px; margin-bottom: 0; font-size: 13px;">
+        Cada projeto é único. Cada espaço, uma história. Cada entrega, um sonho realizado.
+      </p>
+    </div>
+
+
+    <!-- ── PROJETOS EM DESTAQUE (largura total) ────────────── -->
+
+    <!-- Projeto 01 - Imagem 1 -->
+    <div class="projeto-destaque">
+
+      <!-- IMAGEM — Projeto em Destaque
+           Arquivo: assets/imagens/projetos/casa-primavera-destaque.jpg
+           Proporção ideal: 16:7 (ex: 1600×700px) -->
+      <img
+        class="projeto-destaque-foto"
+        src="assets/imagens/projetos/casa-primavera-destaque.jpg"
+        alt="Casa Primavera — projeto em destaque"
+       loading="lazy">
+
+      <!-- Informações do projeto
+           Para alterar: edite os textos abaixo -->
+      <div class="projeto-destaque-lado">
+
+        <p class="section-label">Projeto em Destaque</p>
+
+        <!-- Nome do projeto -->
+        <h3 class="projeto-full-title">
+          Casa Primavera
+        </h3>
+
+        <!-- Descrição -->
+        <p class="projeto-full-desc">
+          Projeto residencial unifamiliar que equilibra sofisticação e aconchego por meio de
+          materiais naturais, ampla integração entre os ambientes e iluminação generosa —
+          criando um lar com personalidade e serenidade.
+        </p>
+
+        <!-- Tags (tipologia, área, cidade)
+             Para adicionar: copie um <span class="projeto-tag">
+             Para remover: apague o <span> correspondente -->
+        <div>
+          <span class="projeto-tag">Residencial</span>
+          <span class="projeto-tag">180 m²</span>
+          <span class="projeto-tag">São Sebastião da Grama - SP</span>
+        </div>
+
+      </div>
+
+    </div>
+
+   
+    <div class="projeto-grid">
+
+      <!-- Imagem 2 -->
+      <div class="projeto-card">
+
+        <!-- IMAGEM — Casa Primavera - Piscina
+             Arquivo: assets/imagens/projetos/casa-primavera-piscina.jpg
+             Proporção ideal: 4:3 (ex: 900×675px) -->
+        <img
+          class="projeto-foto"
+          src="assets/imagens/projetos/casa-primavera-piscina.jpg"
+          alt="Casa Primavera"
+         loading="lazy">
+
+        <div class="projeto-info">
+          <div>
+            <p class="projeto-nome">Área Externa</p>    <!-- ← nome -->
+            <p class="projeto-meta">Piscina · Área Gourmet · Deck </p> <!-- ← meta -->
+          </div>
+          <p class="projeto-conceito">Leveza e equilíbrio em cada detalhe</p>
+        </div>
+
+      </div>
+
+      <!-- Imagem 3 -->
+      <div class="projeto-card">
+
+        <!-- IMAGEM — Casa Brisa
+             Arquivo: assets/imagens/projetos/casa-primavera-horta.jpg
+             Proporção ideal: 4:3 (ex: 900×675px) -->
+        <img
+          class="projeto-foto"
+          src="assets/imagens/projetos/casa-primavera-horta.jpg"
+          alt="Horta"
+         loading="lazy">
+
+        <div class="projeto-info">
+          <div>
+            <p class="projeto-nome">Horta</p>
+            <p class="projeto-meta">Depósito · Horta · Acesso Cozinha</p>
+          </div>
+          <p class="projeto-conceito">Materialidade natural e integração com o entorno</p>
+        </div>
+
+      </div>
+      
+    </div>
+
+    <!-- ── PROJETOS EM DESTAQUE (largura total) ────────────── -->
+
+    <!-- Projeto 02 - Imagem 1 -------------------------------------------------------------------------------------------------------->
+    <div class="projeto-destaque">
+
+      <!-- IMAGEM — Projeto em Destaque
+           Arquivo: assets/imagens/projetos/casa-primavera-destaque.jpg
+           Proporção ideal: 16:7 (ex: 1600×700px) -->
+      <img
+        class="projeto-destaque-foto"
+        src="assets/imagens/projetos/casa_jasmim1.jpg"
+        alt="Casa Primavera — projeto em destaque"
+       loading="lazy">
+
+      <!-- Informações do projeto
+           Para alterar: edite os textos abaixo -->
+      <div class="projeto-destaque-lado">
+
+        <p class="section-label">Projeto em Destaque</p>
+
+        <!-- Nome do projeto -->
+        <h3 class="projeto-full-title">
+          Casa Jasmim
+        </h3>
+
+        <!-- Descrição -->
+        <p class="projeto-full-desc">
+          Uma casa que será refúgio da rotina acelerada dos clientes.
+          Em um lote de mais de 2.000m2, projetamos uma casa super acolhedora, 
+          seguindo todo programa de necessidades dos clientes e estilo que sempre sonharam.
+        </p>
+
+        <!-- Tags (tipologia, área, cidade)
+             Para adicionar: copie um <span class="projeto-tag">
+             Para remover: apague o <span> correspondente -->
+        <div>
+          <span class="projeto-tag">Residencial</span>
+          <span class="projeto-tag">320 m²</span>
+          <span class="projeto-tag">Guaxupé - MG</span>
+        </div>
+
+      </div>
+
+    </div>
+
+   
+    <div class="projeto-grid">
+
+      <!-- Imagem 2 -->
+      <div class="projeto-card">
+
+        <!-- IMAGEM — Casa Primavera - Piscina
+             Arquivo: assets/imagens/projetos/casa-primavera-piscina.jpg
+             Proporção ideal: 4:3 (ex: 900×675px) -->
+        <img
+          class="projeto-foto"
+          src="assets/imagens/projetos/casa_jasmim_2.jpg"
+          alt="Casa Primavera"
+         loading="lazy">
+
+        <div class="projeto-info">
+          <div>
+            <p class="projeto-nome">Pomar Quartos
+            </p>    <!-- ← nome -->
+            <p class="projeto-meta">Piscina · Área Gourmet · Deck </p> <!-- ← meta -->
+          </div>
+          <p class="projeto-conceito">Leveza e equilíbrio em cada detalhe</p>
+        </div>
+
+      </div>
+
+      <!-- Imagem 3 -->
+      <div class="projeto-card">
+
+        <!-- IMAGEM — Casa Brisa
+             Arquivo: assets/imagens/projetos/casa-primavera-horta.jpg
+             Proporção ideal: 4:3 (ex: 900×675px) -->
+        <img
+          class="projeto-foto"
+          src="assets/imagens/projetos/casa_jasmim_4.jpg"
+          alt="Horta"
+         loading="lazy">
+
+        <div class="projeto-info">
+          <div>
+            <p class="projeto-nome">Varanda Piscina</p>
+            <p class="projeto-meta">Depósito · Horta · Acesso Cozinha</p>
+          </div>
+          <p class="projeto-conceito">Materialidade natural e integração com o entorno</p>
+        </div>
+
+      </div>
+      
+    </div><!-- ── PROJETOS EM DESTAQUE (largura total) ────────────── -->
+
+    <!-- Projeto 03 - Imagem 1 -------------------------------------------------------------------------------------------------------->
+    <div class="projeto-destaque">
+
+      <!-- IMAGEM — Projeto em Destaque
+           Arquivo: assets/imagens/projetos/casa-primavera-destaque.jpg
+           Proporção ideal: 16:7 (ex: 1600×700px) -->
+      <img
+        class="projeto-destaque-foto"
+        src="assets/imagens/projetos/casa-kaizuka1.jpg"
+        alt="Casa Primavera — projeto em destaque"
+       loading="lazy">
+
+      <!-- Informações do projeto
+           Para alterar: edite os textos abaixo -->
+      <div class="projeto-destaque-lado">
+
+        <p class="section-label">Projeto em Destaque</p>
+
+        <!-- Nome do projeto -->
+        <h3 class="projeto-full-title">
+          Casa Kaizuka
+        </h3>
+
+        <!-- Descrição -->
+        <p class="projeto-full-desc">
+          Uma reforma que mantém a personalidade dos clientes e traduz o que é uma casa verdadeiramente com essência. 
+          Projetamos uma piscina para conectar a área gourmet com o quiosque, que sempre foi um desejo dos clientes.
+          Reformulamos os espaços existentes, trazendo uma nova área gourmet que acolhe e conecta os espaços.
+        </p>
+
+        <!-- Tags (tipologia, área, cidade)
+             Para adicionar: copie um <span class="projeto-tag">
+             Para remover: apague o <span> correspondente -->
+        <div>
+          <span class="projeto-tag">Reforma residencial</span>
+          <span class="projeto-tag">São José do Rio Pardo - SP</span>
+        </div>
+
+      </div>
+
+    </div>
+
+   
+    <div class="projeto-grid">
+
+      <!-- Imagem 2 -->
+      <div class="projeto-card">
+
+        <!-- IMAGEM — Casa Primavera - Piscina
+             Arquivo: assets/imagens/projetos/casa-primavera-piscina.jpg
+             Proporção ideal: 4:3 (ex: 900×675px) -->
+        <img
+          class="projeto-foto"
+          src="assets/imagens/projetos/casa-kaizuka2.jpg"
+          alt="Casa Kaizuka"
+         loading="lazy">
+
+        <div class="projeto-info">
+          <div>
+            <p class="projeto-nome">Área Externa</p>    <!-- ← nome -->
+            <p class="projeto-meta">Quiosque · Piscina · Área Gourmet </p> <!-- ← meta -->
+          </div>
+          <p class="projeto-conceito">Harmonia entre os materiais e espaços.</p>
+        </div>
+
+      </div>
+
+      <!-- Imagem 3 -->
+      <div class="projeto-card">
+
+        <!-- IMAGEM — Casa Brisa
+             Arquivo: assets/imagens/projetos/casa-primavera-horta.jpg
+             Proporção ideal: 4:3 (ex: 900×675px) -->
+        <img
+          class="projeto-foto"
+          src="assets/imagens/projetos/casa-kaizuka3.jpg"
+          alt="Horta"
+         loading="lazy">
+
+        <div class="projeto-info">
+          <div>
+            <p class="projeto-nome">Living</p>
+            <p class="projeto-meta">Living · Lavabo · Sala de TV</p>
+          </div>
+          <p class="projeto-conceito">Materialidade natural e integração com o entorno</p>
+        </div>
+
+      </div>
+      
+    </div><!-- ── PROJETOS EM DESTAQUE (largura total) ────────────── -->
+
+    <!-- Projeto 04 - Imagem 1 --------------------------------------------------------------------------------------------------->
+    <div class="projeto-destaque">
+
+      <!-- IMAGEM — Projeto em Destaque
+           Arquivo: assets/imagens/projetos/casa-primavera-destaque.jpg
+           Proporção ideal: 16:7 (ex: 1600×700px) -->
+      <img
+        class="projeto-destaque-foto"
+        src="assets/imagens/projetos/casa-alpinia-01.jpg"
+        alt="Casa Alpinia — projeto em destaque"
+       loading="lazy">
+
+      <!-- Informações do projeto
+           Para alterar: edite os textos abaixo -->
+      <div class="projeto-destaque-lado">
+
+        <p class="section-label">Projeto em Destaque</p>
+
+        <!-- Nome do projeto -->
+        <h3 class="projeto-full-title">
+          Casa Alpínia
+        </h3>
+
+        <!-- Descrição -->
+        <p class="projeto-full-desc">
+          Uma fachada contemporânea que combina pedra, madeira e volumes bem definidos para criar uma arquitetura sofisticada, acolhedora e que preserva a privacidade dos moradores.
+        </p>
+
+        <!-- Tags (tipologia, área, cidade)
+             Para adicionar: copie um <span class="projeto-tag">
+             Para remover: apague o <span> correspondente -->
+        <div>
+          <span class="projeto-tag">Residencial</span>
+          <span class="projeto-tag">520 m²</span>
+          <span class="projeto-tag">Guaxupé - MG</span>
+        </div>
+
+      </div>
+
+    </div>
+
+   
+    <div class="projeto-grid">
+
+      <!-- Imagem 2 -->
+      <div class="projeto-card">
+
+        <!-- IMAGEM — Casa Primavera - Piscina
+             Arquivo: assets/imagens/projetos/casa-primavera-piscina.jpg
+             Proporção ideal: 4:3 (ex: 900×675px) -->
+        <img
+          class="projeto-foto"
+          src="assets/imagens/projetos/casa-alpinia-02.jpg"
+          alt="Casa Primavera"
+         loading="lazy">
+
+        <div class="projeto-info">
+          <div>
+            <p class="projeto-nome">Entrada Social</p>    <!-- ← nome -->
+            <p class="projeto-meta">Hall de Entrada · Acesso Social </p> <!-- ← meta -->
+          </div>
+          <p class="projeto-conceito">Leveza e equilíbrio em cada detalhe</p>
+        </div>
+
+      </div>
+
+      <!-- Imagem 3 -->
+      <div class="projeto-card">
+
+        <!-- IMAGEM — Casa Brisa
+             Arquivo: assets/imagens/projetos/casa-primavera-horta.jpg
+             Proporção ideal: 4:3 (ex: 900×675px) -->
+        <img
+          class="projeto-foto"
+          src="assets/imagens/projetos/casa-alpinia-03.jpg"
+          alt="Horta"
+         loading="lazy">
+
+        <div class="projeto-info">
+          <div>
+            <p class="projeto-nome">Área Externa</p>
+            <p class="projeto-meta">Corredor · Piscina · Área Gourmet</p>
+          </div>
+          <p class="projeto-conceito">Materialidade natural e integração com o entorno</p>
+        </div>
+
+      </div>
+      
+    </div><!-- ── PROJETOS EM DESTAQUE (largura total) ────────────── -->
+  </section>
+
+
+
+  <!-- =========================================================================================================================================================
+       SEÇÃO 6 — INTERIORES
+       ========================================================================================================================================================= -->
+
+  <section id="interiores">
+
+    <p class="section-label reveal">Projetos Casa Dois</p>
+    <h2 class="section-title reveal reveal-delay-1" style="max-width: 500px; margin-top: 16px;">
+      Beleza, conforto<br>e <strong>personalidade</strong>.
+    </h2>
+
+    <!--
+      Grade de interiores — proporções das imagens:
+      ─────────────────────────────────────────────
+      .tall  → aspect-ratio 3:4  (retrato vertical)
+      .sq    → aspect-ratio 1:1  (quadrado)
+      .wide  → aspect-ratio 3:2  (paisagem)
+      .span2 → ocupa 2 colunas
+
+      Para trocar a imagem: altere o src="" da <img>
+      Para alterar a proporção: troque a classe (.tall, .sq, .wide)
+    -->
+    <div class="interiores-masonry">
+
+      <!-- Imagem 1: vertical (coluna 1, linha 1–2) -->
+      <div class="int-img tall">
+        <img src="assets/imagens/interiores/casa_alpinia_living3.jpg" alt="Casa Alpinia Living — horta e área de serviço" loading="lazy">
+      </div>
+
+      <div class="int-img span2">
+        <img src="assets/imagens/interiores/casa_alpinia_hall.jpg" alt="Casa Alpinia Hall de Entrada — horta e área de serviço" loading="lazy">
+      </div>
+
+      <div class="int-img span2">
+        <img src="assets/imagens/interiores/casa_alpinia_piscina2.jpg" alt="Casa Alpinia Piscina — horta e área de serviço" loading="lazy">
+      </div>
+
+      <div class="int-img span">
+        <img src="assets/imagens/interiores/casa_alpinia_escritorio.jpg" alt="Casa Alpinia Escritorio — horta e área de serviço" loading="lazy">
+      </div>
+
+      <div class="int-img span">
+        <img src="assets/imagens/interiores/casa_alpinia_lavabo.jpg" alt="Casa Jatoba Spa — horta e área de serviço" loading="lazy">
+      </div>
+
+      <div class="int-img span2">
+        <img src="assets/imagens/interiores/casa_montecarlo_1.jpg" alt="Casa Jatoba Living  — horta e área de serviço" loading="lazy">
+      </div>
+
+      <div class="int-img span2">
+        <img src="assets/imagens/interiores/casa_alpinia_living2.jpg" alt="Casa Jatoba Living  — horta e área de serviço" loading="lazy">
+      </div>
+
+      <div class="int-img tall">
+        <img src="assets/imagens/interiores/ap_cenarium_1.jpg" alt="Casa Jatoba Living  — horta e área de serviço" loading="lazy">
+      </div>
+
+
+
+
+
+      <!-- ── Para adicionar mais imagens: ───────────────────
+           Copie um bloco <div class="int-img ..."> e cole aqui.
+           O grid se reorganiza automaticamente.
+           ─────────────────────────────────────────────────── -->
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       SEÇÃO 7 — DEPOIMENTOS
+       ========================================================= -->
+
+  <section id="depoimentos">
+
+    <p class="section-label reveal" style="color: var(--cappuccino-light);">O que dizem nossos clientes</p>
+    <h2 class="section-title reveal reveal-delay-1" style="color: var(--algodao); font-size: 36px; margin-top: 16px;">
+      Sonhos <strong>realizados</strong>.
+    </h2>
+
+    <div class="depoimentos-grid">
+
+      <!-- Depoimento 1 (fundo: cappuccino) -->
+      <div class="depoimento reveal">
+        <div class="depo-aspas">"</div>
+        <!-- Texto do depoimento — para alterar, edite abaixo -->
+        <p class="depo-texto">
+          "Amamos, ficou maravilhoso!!! Vocês estão de parabéns!! Vocês são muito competentes ❤️❤️❤️;! Muiiiito obrigada!"
+        </p>
+        <!-- Autor — para alterar, edite abaixo -->
+        <p class="depo-autor">M. Angélica · Reforma e Interiores - SP</p>
+      </div>
+
+      <!-- Depoimento 2 (fundo: cappuccino-dark — mais escuro) -->
+      <div class="depoimento reveal reveal-delay-1">
+        <div class="depo-aspas">"</div>
+        <p class="depo-texto">
+          "O serviço de curadoria da Casa Dois fez toda a diferença para mim. Com a orientação deles, a margem de erro praticamente desapareceu. 
+          Além de economizar semanas de pesquisa e decisões, ganhei segurança em cada escolha, sabendo que tudo estava alinhado ao projeto..."
+        </p>
+        <p class="depo-autor">Danilo · Interiores e Curadoria -SP </p>
+      </div>
+
+      <!-- Depoimento 3 (fundo: cappuccino-dark — mais escuro) -->
+      <div class="depoimento reveal reveal-delay-1">
+        <div class="depo-aspas">"</div>
+        <p class="depo-texto">
+          "Marcelo e Victoria formam a dupla de arquitetos perfeita! Que prazer poder trabalhar com pessoas tão capazes e talentosas. 
+          Amei meu projeto, conseguiram captar a essência do que gostaria em termos de estilo e funcionalidade. Recomendo!"
+        </p>
+        <p class="depo-autor">Gabriela M. · Projeto de Interiores - SP </p>
+      </div>
+
+      <!-- Depoimento 4 (fundo: cappuccino-dark — mais escuro) -->
+      <div class="depoimento reveal reveal-delay-1">
+        <div class="depo-aspas">"</div>
+        <p class="depo-texto">
+          "Obrigada!! Ficou excelente o projeto. Cada vez que vejo me apaixono mais. Ah, o detalhe das banquetas embaixo da janela da varanda não passou despercebido, adorei🥰!"
+        </p>
+        <p class="depo-autor">Jaqueline · Projeto de Interiores - RJ </p>
+      </div>
+
+      <!-- ── Para adicionar mais depoimentos: ───────────────
+           Copie um bloco <div class="depoimento"> completo
+           e cole aqui dentro do .depoimentos-grid.
+           ─────────────────────────────────────────────────── -->
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       SEÇÃO 8 — ENCERRAMENTO
+       ========================================================= -->
+
+  <section id="encerramento">
+
+    <!-- Coluna esquerda: melhor foto do portfólio -->
+    <div class="enc-esquerda">
+
+      <!-- IMAGEM — Encerramento (melhor foto)
+           Arquivo: assets/imagens/encerramento.jpg
+           Proporção ideal: retrato/3:4 (ex: 900×1200px) -->
+      <img
+        class="enc-foto"
+        src="assets/imagens/encerramento.jpg"
+        alt="Casa Dois Arquitetos — melhor projeto"
+       loading="lazy">
+
+    </div>
+
+    <!-- Coluna direita: mensagem + logo -->
+    <div class="enc-direita">
+
+      <div>
+        <p class="section-label reveal" style="color: var(--cappuccino);">Nossa missão</p>
+
+        <!-- Mensagem de encerramento
+             <em> = texto em cappuccino-light
+             Para alterar: edite o texto abaixo -->
+        <p class="enc-mensagem reveal reveal-delay-1">
+          Acreditamos que cada projeto deve refletir a
+          <em>personalidade</em> de quem irá vivê-lo. Por isso criamos espaços
+          que unem <em>sofisticação, funcionalidade e acolhimento.</em>
+        </p>
+      </div>
+
+      <!-- LOGO — Encerramento
+           Arquivo: assets/logos/logo-encerramento.png
+           Use a versão clara (branca ou algodão) da logo
+           Para alterar o tamanho: edite "width: 220px" em css/estilo.css → .enc-logo img -->
+      <div class="enc-logo reveal reveal-delay-2">
+        <img src="assets/logos/logo-encerramento.png" alt="Casa Dois Arquitetos" loading="lazy">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       SEÇÃO 9 — CONTATO
+       ========================================================= -->
+
+  <section id="contato">
+
+    <!-- Coluna esquerda: dados de contato -->
+    <div class="contato-left">
+
+      <p class="section-label reveal">Entrar</p>
+      <h2 class="section-title titulo-sonho reveal reveal-delay-1">
+        Pronto para <strong>materializar</strong> o seu sonho?
+      </h2>
+
+      <!-- Informações de contato
+           Para alterar um dado: edite o texto dentro de <span class="contato-valor">
+           Para adicionar um contato: copie um bloco <div class="contato-item"> completo -->
+      <div class="contato-info">
+
+        <div class="contato-item reveal reveal-delay-1">
+
+  <span class="contato-label">WhatsApp</span>
+
+  <a
+    class="contato-valor whatsapp-link"
+    href="https://wa.me/5519998283366?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20o%20trabalho%20de%20voc%C3%AAs."
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    19 99828-3366
+  </a>
+
+  <a
+    class="whatsapp-btn"
+    href="https://wa.me/5519998283366?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20o%20trabalho%20de%20voc%C3%AAs."
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Entrar em contato
+  </a>
+
+</div>
+
+        <div class="contato-item reveal reveal-delay-2">
+
+  <span class="contato-label">Instagram</span>
+
+  <a
+    class="contato-valor instagram-link"
+    href="https://www.instagram.com/casadois.arquitetos/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    @casadois.arquitetos
+  </a>
+
+</div>
+
+       
+
+      </div>
+
+    </div>
+
+
+
+  </section>
+
+
+  <!-- =========================================================
+       RODAPÉ
+       ========================================================= -->
+
+  <footer>
+
+    <!-- Texto de copyright
+         Para alterar: edite o texto abaixo -->
+    <p class="footer-copy">
+      © 2026 Casa Dois Arquitetos Ltda · Todos os direitos reservados.
+    </p>
+
+    <!-- LOGO — Rodapé
+         Arquivo: assets/logos/logo-footer.png
+         Use a versão clara (branca ou algodão) da logo
+         Para alterar a altura: edite "height: 36px" em css/estilo.css → .footer-logo img -->
+    <div class="footer-logo">
+      <img src="assets/logos/logo-footer.png" alt="Casa Dois Arquitetos" loading="lazy">
+    </div>
+
+  </footer>
+
+
+  <!-- JavaScript — animações de scroll -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
